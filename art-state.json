@@ -2,5 +2,10 @@
   "date": "2026-09-15",
   "symbol": "smiley",
   "stroke": 8,
-  "purpose": "Intentional decorative contribution art"
+  "purpose": "Intentional decorative contribution art",
+  "backfill": {
+    "date": "2020-01-06",
+    "symbol": "star",
+    "stroke": 1
+  }
 }
