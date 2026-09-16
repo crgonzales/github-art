@@ -1,0 +1,23 @@
+name: Daily cute art
+on:
+  schedule:
+    - cron: '43 20 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: contribution-art
+  cancel-in-progress: false
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+      - name: Draw due pixels and catch up missed days
+        run: python3 art.py
+      - name: Push art
+        run: git push origin HEAD:master
